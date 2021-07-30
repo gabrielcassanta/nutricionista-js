@@ -6,15 +6,11 @@ var pacientes = document.querySelectorAll(".paciente"); //seletor de todos
 for (var i = 0; i < pacientes.length; i++) { //laço for para calcular o IMC dos pacientes
   var paciente = pacientes[i];
 
-  console.log(pacientes[i]);
-
   var tdPeso = paciente.querySelector(".info-peso");
   var peso = tdPeso.textContent;
 
   var tdAltura = paciente.querySelector(".info-altura");
   var altura = tdAltura.textContent;
-
-  console.log(tdAltura, altura);
 
   var tdImc = paciente.querySelector(".info-imc");
 
@@ -54,7 +50,6 @@ function validaPeso(peso) {
 }
 
 function validaAltura(altura) {
-  console.log(altura, typeof altura);
   altura = Number(altura);
   if (altura >= 0 && altura <= 3.0) {
     return true;
