@@ -20,16 +20,13 @@ for (var i = 0; i < pacientes.length; i++) { //laço for para calcular o IMC dos
 
   var pesoValido = validaPeso(peso);
   var alturaValida = validaAltura(altura);
-  console.log("altura", alturaValida);
 
   if (!pesoValido) {  //validando o peso
-    console.log("peso inválido");
     tdImc.textContent = "Peso Inválido" //alterando o valor de tdImc 
     paciente.classList.add("paciente-invalido"); //trocando a cor com css para invalidos
   }
 
-  if (!validaAltura) {  // validando a altura
-    console.log("altura inválida");
+  if (!alturaValida) {  // validando a altura
     tdImc.textContent = "Altura Inválida"; //alterando o valor de tdImc 
     paciente.classList.add("paciente-invalido");  //trocando a cor com css para invalidos
   }
@@ -65,11 +62,3 @@ function validaAltura(altura) {
     return false;
   }
 }
-
-// function validaAltura(altura) {
-//   if (altura >= 0 && altura <= 3.0) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
