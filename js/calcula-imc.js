@@ -1,6 +1,3 @@
-var titulo = document.querySelector(".titulo");
-titulo.textContent = "Aparecida Nutricionista"  // alterando o titulo do h1
-
 var pacientes = document.querySelectorAll(".paciente"); //seletor de todos
 
 for (var i = 0; i < pacientes.length; i++) { //laço for para calcular o IMC dos pacientes
