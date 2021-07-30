@@ -11,7 +11,7 @@ botaoAdicionar.addEventListener("click", function (event) {  //uma escuta no bot
 
   var paciente = obtemPacienteDoFormulario(form);
 
-  var pacienteTr = montaTr(paciente);
+
 
   var erros = validaPaciente(paciente);
 
@@ -21,14 +21,18 @@ botaoAdicionar.addEventListener("click", function (event) {  //uma escuta no bot
     return;
   }
 
-  var tabela = document.querySelector("#tabela-pacientes");  //seleciona o id #tabela-pacientes e atribui a var tabela
-
-  tabela.appendChild(pacienteTr);  //faz com que pacienteTr pertença a tabela que é o #tabela-pacientes no Html 
+  adicionaPacienteNaTabela(paciente);
 
   form.reset();
   var mensagemErro = document.querySelector("#mensagens-erro");
   mensagemErro.innerHTML = "";
 });
+
+function adicionaPacienteNaTabela(paciente) {
+  var pacienteTr = montaTr(paciente);
+  var tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagemDeErro(erros) {
   var ul = document.querySelector("#mensagens-erro");
